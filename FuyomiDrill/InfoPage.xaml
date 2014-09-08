@@ -1,0 +1,15 @@
+﻿<Page x:Class="FuyomiDrill.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="820"
+	Title="InfoPage">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="354,65,0,0" TextWrapping="Wrap" Text="ゲーム中の中断 : Esc" VerticalAlignment="Top"/>
+        <TextBlock x:Name="kaishi" HorizontalAlignment="Left" Margin="379,158,0,0" TextWrapping="Wrap" Text="開始 : Enter" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

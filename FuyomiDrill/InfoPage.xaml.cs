@@ -16,21 +16,23 @@ using System.Windows.Shapes;
 namespace FuyomiDrill
 {
     /// <summary>
-    /// StartPage.xaml の相互作用ロジック
+    /// InfoPage.xaml の相互作用ロジック
     /// </summary>
-    public partial class StartPage : Page
+    public partial class InfoPage : Page
     {
-        public StartPage()
+        private int level;
+
+        public InfoPage()
         {
             InitializeComponent();
+            level = 0;
         }
 
-        private void Level1_Click(object sender, RoutedEventArgs e)
+        public InfoPage(int level)
         {
-            InfoPage p = new InfoPage(0);
-            NavigationService.Navigate(p);
+            InitializeComponent();
+            this.level = level;
+            kaishi.Text ="レベル" + (level+1).ToString() + "を開始 : Enter";
         }
-
-
     }
 }

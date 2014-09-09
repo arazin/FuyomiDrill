@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace FuyomiDrill
 {
     /// <summary>
-    /// InfoPage.xaml の相互作用ロジック
+    /// GamePage.xaml の相互作用ロジック
     /// </summary>
-    public partial class InfoPage : Page
+    public partial class GamePage : Page
     {
-        private int level;
-
-        public InfoPage()
+        public GamePage()
         {
             InitializeComponent();
-            level = 0;
         }
-
-        public InfoPage(int level)
-        {
-            InitializeComponent();
-            this.level = level;
-            kaishi.Text ="レベル" + (level+1).ToString() + "を開始 : Enter";
-        }
-
     }
 }

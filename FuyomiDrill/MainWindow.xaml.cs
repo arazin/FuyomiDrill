@@ -26,12 +26,42 @@ namespace FuyomiDrill
         }
 
         // <summary>
-        // Templateで定義したStatusBar
+        // Templateで定義したStatusBarに文字を表示
         // </summary>
         public void setStatus(string statusContent)
         {
             Label statusLabel = this.GetTemplateChild("statusLabel") as Label;
             statusLabel.Content = statusContent;
+        }
+
+        //<summary>
+        //window上でのキー操作をハンドル
+        //</summary>
+        private void keyDownHandler(object sender, KeyEventArgs e)
+        {
+            //EscキーでStartPageに戻る
+            if (e.Key == Key.Escape)
+            {
+                StartPage sP = new StartPage();
+                NavigationService.Navigate(sP);
+            }
+
+            Page p = (Page)NavigationService.Content;
+
+            //InfoPageにおけるkeyDown
+            if (p.Title == "InfoPage")
+            {
+                switch (e.Key)
+                {
+                    case Key.Enter :
+                        GamePage gP = new GamePage();
+                        NavigationService.Navigate(gP);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
         }
     }
 }

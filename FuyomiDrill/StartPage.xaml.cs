@@ -20,15 +20,32 @@ namespace FuyomiDrill
     /// </summary>
     public partial class StartPage : Page
     {
+        private InfoPage iP;
         public StartPage()
         {
             InitializeComponent();
         }
 
-        private void Level1_Click(object sender, RoutedEventArgs e)
+        private void Level_Click(object sender, RoutedEventArgs e)
         {
-            InfoPage p = new InfoPage(0);
-            NavigationService.Navigate(p);
+            MainWindow win = App.GetWindow("NavWin") as MainWindow;
+            Button tmp = e.OriginalSource as Button;
+            win.setStatus(tmp.Name);
+
+            Button senderButton = sender as Button;
+
+            if (senderButton == null)
+                return;
+            else if (senderButton.Name == "level1")
+                iP = new InfoPage(0);
+            else if (senderButton.Name == "level2")
+                iP = new InfoPage(1);
+            else if (senderButton.Name == "level3")
+                iP = new InfoPage(2);
+            else 
+                return;
+
+            NavigationService.Navigate(iP);
         }
 
 

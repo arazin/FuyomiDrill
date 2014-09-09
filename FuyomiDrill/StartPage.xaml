@@ -9,8 +9,8 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="313,52,0,0" TextWrapping="Wrap" Text="Fuyomi Drill" VerticalAlignment="Top" FontFamily="Palace Script MT" FontSize="48"/>
-        <Button Content="Level 1" HorizontalAlignment="Left" Margin="372,155,0,0" VerticalAlignment="Top" Width="75" Click="Level1_Click"/>
-        <Button Content="Level 2" HorizontalAlignment="Left" Margin="372,194,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Level 3" HorizontalAlignment="Left" Margin="372,237,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="level1" Content="Level 1" HorizontalAlignment="Left" Margin="372,155,0,0" VerticalAlignment="Top" Width="75" Click="Level_Click"/>
+        <Button x:Name="level2" Content="Level 2" HorizontalAlignment="Left" Margin="372,194,0,0" VerticalAlignment="Top" Width="75" Click="Level_Click"/>
+        <Button x:Name="level3" Content="Level 3" HorizontalAlignment="Left" Margin="372,237,0,0" VerticalAlignment="Top" Width="75" Click="Level_Click"/>
     </Grid>
 </Page>

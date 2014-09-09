@@ -1,8 +1,20 @@
-﻿<NavigationWindow x:Class="FuyomiDrill.MainWindow"
+﻿<NavigationWindow x:Name="NavWin" x:Class="FuyomiDrill.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="820"
         Source="StartPage.xaml"
         ShowsNavigationUI="False"
                   >
+    <NavigationWindow.Template>
+        <ControlTemplate TargetType="NavigationWindow">
+            <DockPanel x:Name="status" Background="{TemplateBinding Background}">
+                <Label x:Name="statusLabel" Content="StatusBar..." 
+                       Background="LightGray"
+                       DockPanel.Dock="Bottom"/>
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+            </DockPanel>            
+        </ControlTemplate>
+    </NavigationWindow.Template>
+    
 </NavigationWindow>

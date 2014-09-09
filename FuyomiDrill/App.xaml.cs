@@ -13,5 +13,24 @@ namespace FuyomiDrill
     /// </summary>
     public partial class App : Application
     {
+
+        //<summary>
+        //windowを参照するためのメソッド
+        //<summary>
+        public static Window GetWindow(string name)
+        {
+            Window targetWindow = null;
+
+            WindowCollection appWindows = Application.Current.Windows;
+            foreach (Window win in appWindows)
+            {
+                if (win.Name == name)
+                {
+                    targetWindow = win;
+                    break;
+                }
+            }
+            return targetWindow;
+        }
     }
 }

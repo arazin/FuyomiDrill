@@ -24,5 +24,14 @@ namespace FuyomiDrill
         {
             InitializeComponent();
         }
+
+        // <summary>
+        // Templateで定義したStatusBar
+        // </summary>
+        public void setStatus(string statusContent)
+        {
+            Label statusLabel = this.GetTemplateChild("statusLabel") as Label;
+            statusLabel.Content = statusContent;
+        }
     }
 }

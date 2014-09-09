@@ -34,5 +34,9 @@ namespace FuyomiDrill
             this.level = level;
             kaishi.Text ="レベル" + (level+1).ToString() + "を開始 : Enter";
         }
+
+        private void keyDownHandler(object sender, KeyEventArgs e)
+        {
+        }
     }
 }

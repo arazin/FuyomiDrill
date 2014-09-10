@@ -37,12 +37,24 @@ namespace FuyomiDrill
             if (senderButton == null)
                 return;
             else if (senderButton.Name == "level1")
-                iP = new InfoPage(0);
+            {
+                Application.Current.Properties["level"] = 0;
+                iP = new InfoPage();
+            }
             else if (senderButton.Name == "level2")
-                iP = new InfoPage(1);
+            {
+                Application.Current.Properties["level"] = 1;
+                iP = new InfoPage();
+
+            }
+
             else if (senderButton.Name == "level3")
-                iP = new InfoPage(2);
-            else 
+            {
+                Application.Current.Properties["level"] = 2;
+                iP = new InfoPage();
+
+            }
+            else
                 return;
 
             NavigationService.Navigate(iP);

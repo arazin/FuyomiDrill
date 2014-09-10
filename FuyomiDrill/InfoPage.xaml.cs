@@ -25,15 +25,8 @@ namespace FuyomiDrill
         public InfoPage()
         {
             InitializeComponent();
-            level = 0;
+            this.level = (int)Application.Current.Properties["level"] ;
+            kaishi.Text ="レベル" + (this.level+1).ToString() + "を開始 : Enter";
         }
-
-        public InfoPage(int level)
-        {
-            InitializeComponent();
-            this.level = level;
-            kaishi.Text ="レベル" + (level+1).ToString() + "を開始 : Enter";
-        }
-
     }
 }

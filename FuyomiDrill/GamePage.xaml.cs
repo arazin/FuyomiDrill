@@ -20,9 +20,20 @@ namespace FuyomiDrill
     /// </summary>
     public partial class GamePage : Page
     {
+
+        private int level;
+
         public GamePage()
         {
             InitializeComponent();
+            level = 0;
         }
+
+        public GamePage(int level)
+        {
+            InitializeComponent();
+            this.level = level;
+        }
+
     }
 }

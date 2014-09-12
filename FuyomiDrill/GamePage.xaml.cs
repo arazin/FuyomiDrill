@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FuyomiDrillCore;
+using System.IO;
 
 namespace FuyomiDrill
 {
@@ -22,18 +24,20 @@ namespace FuyomiDrill
     {
 
         private int level;
+        private FuyomiGame game;
+        private MainWindow mainWindow;
 
         public GamePage()
         {
             InitializeComponent();
-            level = 0;
+
+            mainWindow = App.GetWindow("NavWin") as MainWindow;
+
+            game = new FuyomiGame(((int)Application.Current.Properties["level"]) + 1);
+            this.qTextBox.Text = game.GameStart();
+            level = (int)Application.Current.Properties["level"];
         }
 
-        public GamePage(int level)
-        {
-            InitializeComponent();
-            this.level = level;
-        }
 
     }
 }

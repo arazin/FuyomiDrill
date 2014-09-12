@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace FuyomiDrill
 {
@@ -51,11 +52,21 @@ namespace FuyomiDrill
             //InfoPageにおけるkeyDown
             if (p.Title == "InfoPage")
             {
+                Page nextP = null;
                 switch (e.Key)
                 {
-                    case Key.Enter :
-                        GamePage gP = new GamePage();
-                        NavigationService.Navigate(gP);
+                    case Key.Enter:
+                        try
+                        {
+                            nextP = new GamePage();
+                        }
+                        catch (FileNotFoundException ex)
+                        {
+                            this.setStatus(ex.Message);
+                            nextP = new StartPage();
+
+                        }
+                        NavigationService.Navigate(nextP);
                         break;
                     default:
                         break;

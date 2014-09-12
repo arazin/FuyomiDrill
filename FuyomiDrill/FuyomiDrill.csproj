@@ -120,6 +120,17 @@
     <Resource Include="hakken3.png" />
     <Resource Include="kokken1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.txt" />
+    <Resource Include="2.txt" />
+    <Resource Include="3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FuyomiDrillCore\FuyomiDrillCore.csproj">
+      <Project>{469519fd-7137-41d5-a5d4-cdb9b4b327b1}</Project>
+      <Name>FuyomiDrillCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

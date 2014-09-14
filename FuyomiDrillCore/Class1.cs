@@ -87,6 +87,8 @@ namespace FuyomiDrillCore
         /// <param name="level">問題のレベル</param>
         public FuyomiGame(int level)
         {
+            qCount = 0;
+            qIndex = 0;
             drill = new List<QuestionSet>();
             path = @"..\..\" + level.ToString() + ".txt";
             this.level = level;
@@ -151,10 +153,32 @@ namespace FuyomiDrillCore
             return drill[0].Question;
         }
 
-        // TODO : 解答に対する応答.未実装
+        /// <summary>
+        /// 解答の正否判定
+        /// </summary>
+        /// <param name="ans">解答の音名</param>
+        /// <returns>正解なら次の問題 不正解なら"false" 正解でゲーム終了なら"end"</returns>
         public string IsCorrect(string ans)
         {
-            throw new NotImplementedException();
+            if (drill[qIndex].Ans == ans)
+            {
+                qCount++; qIndex++;
+
+                if (qCount >= qMax) 
+                {
+                    return "end";
+                }
+
+                if (qIndex >= drill.Count)
+                {
+                    qIndex = 0;
+                    qSetShuffle();
+                }
+
+                return drill[qIndex].Question;
+            }
+
+            return "false";
         }
 
     }

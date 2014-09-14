@@ -38,6 +38,41 @@ namespace FuyomiDrill
             level = (int)Application.Current.Properties["level"];
         }
 
+        private void keyClick(object sender, RoutedEventArgs e)
+        {
+            Button keyButton = null;
+            string ans = "";
+            string nextQuestion = "";
+
+            if (sender is Button)
+            {
+                keyButton = (Button)sender;
+                ans = keyButton.Name;
+            }
+
+            nextQuestion = game.IsCorrect(ans);
+
+            if (nextQuestion == "false")
+            {
+                mainWindow.setStatus("False.");
+            }
+            else if (nextQuestion == "end")
+            {
+                // TODO:ResultPageへ遷移
+                mainWindow.setStatus("Finish!");
+                Page p = new StartPage();
+                NavigationService.Navigate(p);
+            }
+            else
+            {
+                mainWindow.setStatus("Correct.");
+                this.qTextBox.Text = nextQuestion;
+            }
+
+        }
+
+
+
 
     }
 }

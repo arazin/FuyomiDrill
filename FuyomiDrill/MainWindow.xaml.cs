@@ -40,14 +40,18 @@ namespace FuyomiDrill
         //</summary>
         private void keyDownHandler(object sender, KeyEventArgs e)
         {
+            Page p = (Page)NavigationService.Content;
+
             //EscキーでStartPageに戻る
-            if (e.Key == Key.Escape)
+            if (p.Title != "GamePage")
             {
-                StartPage sP = new StartPage();
-                NavigationService.Navigate(sP);
+                if (e.Key == Key.Escape)
+                {
+                    StartPage sP = new StartPage();
+                    NavigationService.Navigate(sP);
+                }
             }
 
-            Page p = (Page)NavigationService.Content;
 
             //InfoPageにおけるkeyDown
             if (p.Title == "InfoPage")

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using FuyomiDrillCore;
 using System.IO;
 using System.Threading;
@@ -32,6 +33,15 @@ namespace FuyomiDrill
         private BitmapImage falseImage;
         private BitmapImage clearImage;
         private List<Button> keyList;
+        private DispatcherTimer timer;
+        private TimeSpan resultTime;
+        private TimeSpan interval;
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            resultTime = resultTime.Add(interval);
+            mainWindow.setStatus(resultTime.ToString(@"mm\:ss\.f"));
+        }
 
         public GamePage()
         {
@@ -45,9 +55,21 @@ namespace FuyomiDrill
             falseImage = new BitmapImage(new Uri(@"..\..\False.png", UriKind.Relative));
             clearImage = new BitmapImage(new Uri(@"..\..\Clear.png",UriKind.Relative));
 
+            // ゲームロジック
             game = new FuyomiGame(((int)Application.Current.Properties["level"]) + 1);
             this.qTextBox.Text = game.GameStart();
             level = (int)Application.Current.Properties["level"];
+
+            // 問題開始からの経過時間を測る
+            interval = new TimeSpan(0, 0, 0, 0, 100);
+            resultTime = TimeSpan.Zero;
+
+            mainWindow.setStatus(resultTime.ToString(@"mm\:ss"));
+
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(dispatcherTimer_Tick);
+            timer.Interval = interval;
+            timer.Start();
         }
 
         //private void invalidateButton()
@@ -96,8 +118,9 @@ namespace FuyomiDrill
             else if (nextQuestion == "end")
             {
                 // TODO:ResultPageへ遷移
+                timer.Stop();
                 mainWindow.setStatus("Finish!");
-                Page p = new StartPage();
+                Page p = new ResultPage(resultTime);
                 NavigationService.Navigate(p);
             }
             else

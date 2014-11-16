@@ -4,6 +4,7 @@
         Title="MainWindow" Height="350" Width="820"
         Source="StartPage.xaml"
         ShowsNavigationUI="False" KeyDown="keyDownHandler"
+                  
                   >
     <NavigationWindow.Template>
         <ControlTemplate TargetType="NavigationWindow">

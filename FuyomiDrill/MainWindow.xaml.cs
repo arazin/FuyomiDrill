@@ -43,6 +43,7 @@ namespace FuyomiDrill
             Page p = (Page)NavigationService.Content;
 
             //EscキーでStartPageに戻る
+            // TODO:できればGamePageでもesc機能させたい
             if (p.Title != "GamePage")
             {
                 if (e.Key == Key.Escape)

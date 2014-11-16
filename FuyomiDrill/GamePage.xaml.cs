@@ -60,6 +60,7 @@ namespace FuyomiDrill
             this.qTextBox.Text = game.GameStart();
             level = (int)Application.Current.Properties["level"];
 
+            // TODO:タイマーをmainwindowへ移行する
             // 問題開始からの経過時間を測る
             interval = new TimeSpan(0, 0, 0, 0, 100);
             resultTime = TimeSpan.Zero;
@@ -117,7 +118,7 @@ namespace FuyomiDrill
             }
             else if (nextQuestion == "end")
             {
-                // TODO:ResultPageへ遷移
+
                 timer.Stop();
                 mainWindow.setStatus("Finish!");
                 Page p = new ResultPage(resultTime);

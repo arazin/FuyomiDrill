@@ -28,14 +28,20 @@ namespace FuyomiDrill
 
         private int level;
         private FuyomiGame game;
+
         private MainWindow mainWindow;
+
         private BitmapImage correctImage;
         private BitmapImage falseImage;
         private BitmapImage clearImage;
+
         private List<Button> keyList;
+
         private DispatcherTimer timer;
         private TimeSpan resultTime;
         private TimeSpan interval;
+
+        private int missCount;
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
@@ -59,6 +65,7 @@ namespace FuyomiDrill
             game = new FuyomiGame(((int)Application.Current.Properties["level"]) + 1);
             this.qTextBox.Text = game.GameStart();
             level = (int)Application.Current.Properties["level"];
+            missCount = 0;
 
             // TODO:タイマーをmainwindowへ移行する
             // 問題開始からの経過時間を測る
@@ -115,13 +122,14 @@ namespace FuyomiDrill
                 setImageFrame.Value = falseImage;
                 mainWindow.setStatus("False.");
                 setQuestionFrame.Value = qTextBox.Text;
+                missCount++;
             }
             else if (nextQuestion == "end")
             {
 
                 timer.Stop();
                 mainWindow.setStatus("Finish!");
-                Page p = new ResultPage(resultTime);
+                Page p = new ResultPage(resultTime,missCount);
                 NavigationService.Navigate(p);
             }
             else

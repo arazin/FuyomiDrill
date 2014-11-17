@@ -4,12 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="300" d:DesignWidth="820"
 	Title="ResultPage">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="73,75,0,0" TextWrapping="Wrap" Text="結果" VerticalAlignment="Top" Height="37" Width="141"/>
-        <TextBlock x:Name="resultTimeTextBlock" HorizontalAlignment="Left" Margin="73,167,0,0" TextWrapping="Wrap" Text="32.5秒" VerticalAlignment="Top" Height="30" Width="141"/>
+        <TextBlock HorizontalAlignment="Left" Margin="224,196,0,0" TextWrapping="Wrap" Text="あなたのタイムは" VerticalAlignment="Top" Height="29" Width="124" FontSize="18"/>
+        <TextBlock x:Name="resultTimeTextBlock" HorizontalAlignment="Left" Margin="378,196,0,0" TextWrapping="Wrap" Text="32.5" VerticalAlignment="Top" Height="50" Width="86" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="499,223,0,0" TextWrapping="Wrap" Text="秒です" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="levelResultTextBlock" HorizontalAlignment="Left" Margin="378,39,0,0" TextWrapping="Wrap" Text="level1" VerticalAlignment="Top" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="362,121,0,0" TextWrapping="Wrap" Text="ミス" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="missTextBlock" HorizontalAlignment="Left" Margin="392,121,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="422,144,0,0" TextWrapping="Wrap" Text="回" VerticalAlignment="Top" Width="19" FontSize="18"/>
 
     </Grid>
 </Page>

@@ -20,10 +20,12 @@ namespace FuyomiDrill
     /// </summary>
     public partial class ResultPage : Page
     {
-        public ResultPage(TimeSpan resultTime)
+        public ResultPage(TimeSpan resultTime, int missCount)
         {
             InitializeComponent();
-            resultTimeTextBlock.Text = resultTime.ToString(@"ss\.f") + "秒";
+            levelResultTextBlock.Text = "level" + (((int)Application.Current.Properties["level"]) + 1).ToString();
+            missTextBlock.Text = missCount.ToString();
+            resultTimeTextBlock.Text = resultTime.ToString(@"ss\.f");
         }
     }
 }

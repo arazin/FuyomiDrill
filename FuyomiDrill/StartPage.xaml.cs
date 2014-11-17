@@ -21,14 +21,16 @@ namespace FuyomiDrill
     public partial class StartPage : Page
     {
         private InfoPage iP;
+        private MainWindow win;
         public StartPage()
         {
             InitializeComponent();
+            win = App.GetWindow("NavWin") as MainWindow;
         }
 
         private void Level_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow win = App.GetWindow("NavWin") as MainWindow;
+
             Button tmp = e.OriginalSource as Button;
             win.setStatus(tmp.Name);
 

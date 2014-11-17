@@ -25,7 +25,7 @@ namespace FuyomiDrill
             InitializeComponent();
             levelResultTextBlock.Text = "level" + (((int)Application.Current.Properties["level"]) + 1).ToString();
             missTextBlock.Text = missCount.ToString();
-            resultTimeTextBlock.Text = resultTime.ToString(@"ss\.f");
+            resultTimeTextBlock.Text = resultTime.TotalSeconds.ToString("f1");
         }
     }
 }

@@ -46,7 +46,7 @@ namespace FuyomiDrill
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             resultTime = resultTime.Add(interval);
-            mainWindow.setStatus(resultTime.ToString(@"mm\:ss\.f"));
+            mainWindow.setStatus(resultTime.TotalSeconds.ToString("f1"));
         }
 
         public GamePage()
@@ -72,7 +72,7 @@ namespace FuyomiDrill
             interval = new TimeSpan(0, 0, 0, 0, 100);
             resultTime = TimeSpan.Zero;
 
-            mainWindow.setStatus(resultTime.ToString(@"mm\:ss"));
+            mainWindow.setStatus(resultTime.TotalSeconds.ToString("f1"));
 
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(dispatcherTimer_Tick);

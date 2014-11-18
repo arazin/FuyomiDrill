@@ -41,7 +41,14 @@
     </Page.Resources>
 
     <Grid>
-        <Button Style="{StaticResource kenban}" x:Name="C" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="2,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="White" Offset="0.487"/>
+                <GradientStop Color="#FF080808" Offset="0.796"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Style="{StaticResource kenban}" x:Name="C" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="33,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken1.png"/>
             </Button.Background>
@@ -52,75 +59,75 @@
             </Button.Triggers>-->
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="A" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="232,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="A" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="263,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken6.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="D" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="49,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="D" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="80,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken2.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="E" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="95,45,0,0" Height="187" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="E" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="126,45,0,0" Height="187" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken3.png"/>
             </Button.Background>
         </Button>
 
 
-        <Button Style="{StaticResource kenban}" x:Name="Ds" Content="" HorizontalAlignment="Left" Margin="86,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="Ds" Content="" HorizontalAlignment="Left" Margin="117,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="kokken5.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="G" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="186,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="G" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="217,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken5.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="F" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="140,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="F" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="171,45,0,0" Height="187" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken4.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="Gs" Content="" HorizontalAlignment="Left" Margin="217,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="Gs" Content="" HorizontalAlignment="Left" Margin="248,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="kokken5.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="Fs" Content="" HorizontalAlignment="Left" Margin="165,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="Fs" Content="" HorizontalAlignment="Left" Margin="196,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="kokken5.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="B" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="278,45,0,0" Height="187" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="B" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="309,45,0,0" Height="187" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="hakken7.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="As" Content="" HorizontalAlignment="Left" Margin="268,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="As" Content="" HorizontalAlignment="Left" Margin="299,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="kokken5.png"/>
             </Button.Background>
         </Button>
 
-        <Button Style="{StaticResource kenban}" x:Name="Cs" Content="" HorizontalAlignment="Left" Margin="27,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
+        <Button Style="{StaticResource kenban}" x:Name="Cs" Content="" HorizontalAlignment="Left" Margin="58,45,0,0" VerticalAlignment="Top" Width="31" Height="106" BorderBrush="{x:Null}" Click="keyClick">
             <Button.Background>
                 <ImageBrush ImageSource="kokken5.png"/>
             </Button.Background>
         </Button>
 
-        <TextBlock x:Name="qTextBox" HorizontalAlignment="Left" Margin="502,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="249" FontFamily="MusiQwik" FontSize="72" Text="=&amp;==B=="/>
+        <TextBlock x:Name="qTextBox" HorizontalAlignment="Left" Margin="530,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="249" FontFamily="MusiQwik" FontSize="72" Text="=&amp;==B=="/>
 
-        <Image x:Name="rightOrWrongImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="468,45,0,0"/>
+        <Image x:Name="rightOrWrongImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="493,10,0,0"/>
     </Grid>
 </Page>

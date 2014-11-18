@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 using FuyomiDrillCore;
 using System.IO;
 using System.Threading;
@@ -37,17 +36,8 @@ namespace FuyomiDrill
 
         private List<Button> keyList;
 
-        private DispatcherTimer timer;
-        private TimeSpan resultTime;
-        private TimeSpan interval;
-
         private int missCount;
 
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            resultTime = resultTime.Add(interval);
-            mainWindow.setStatus(resultTime.TotalSeconds.ToString("f1"));
-        }
 
         public GamePage()
         {
@@ -67,17 +57,8 @@ namespace FuyomiDrill
             level = (int)Application.Current.Properties["level"];
             missCount = 0;
 
-            // TODO:タイマーをmainwindowへ移行する
             // 問題開始からの経過時間を測る
-            interval = new TimeSpan(0, 0, 0, 0, 100);
-            resultTime = TimeSpan.Zero;
-
-            mainWindow.setStatus(resultTime.TotalSeconds.ToString("f1"));
-
-            timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(dispatcherTimer_Tick);
-            timer.Interval = interval;
-            timer.Start();
+            mainWindow.StartTimer();
         }
 
         //private void invalidateButton()
@@ -126,10 +107,8 @@ namespace FuyomiDrill
             }
             else if (nextQuestion == "end")
             {
-
-                timer.Stop();
+                Page p = new ResultPage(mainWindow.StopTimer(),missCount);
                 mainWindow.setStatus("Finish!");
-                Page p = new ResultPage(resultTime,missCount);
                 NavigationService.Navigate(p);
             }
             else

@@ -78,6 +78,10 @@ namespace FuyomiDrillCore
         /// ゲームでこなす問題の数
         /// </summary>
         private const int qMax = 30;
+        /// <summary>
+        /// 長調、調の数
+        /// </summary>
+        private const int majorKeyMax = 6;
 
 
 
@@ -90,8 +94,21 @@ namespace FuyomiDrillCore
             qCount = 0;
             qIndex = 0;
             drill = new List<QuestionSet>();
-            path = @"..\..\" + level.ToString() + ".txt";
             this.level = level;
+            // TODO:パス指定の方法。相対パスはマズそう
+            if (level == 1 || level == 2)
+            {
+                path = @"..\..\" + level.ToString() + ".txt";
+            }
+            else if (level == 3)
+            {
+                System.Random rng = new System.Random();
+                int k = rng.Next(majorKeyMax);
+                path = @"..\..\" + level.ToString() + k.ToString() + ".txt";
+
+            }
+
+
 
             if (File.Exists(path))
             {
